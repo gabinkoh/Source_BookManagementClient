@@ -22,20 +22,15 @@ function searchBook() {
         jsonp: "callback",
         success: function (result) {
             sessionId = result.id;
-            console.log("sessionId.... " + sessionId);
-
-            console.log(".... " + event.keyCode);
-//
-
-               test($("#keyword").val());
-
+            test($("#keyword").val());
 
         },
         error: function () {
-            alert("이상이상")
+            alert("이상이상");
         }
     });
     }
+
 }
 
 function test(key) {
@@ -190,9 +185,8 @@ function test(key) {
 
                 ubtn = $("<input />").attr("type", "button").attr("value", "수정").attr("id", "update");
                 ubtn.on("click", function () {
-                    detailDiv.remove();
                     var isbn = $(this).parent().parent().attr("data-isbn");
-                    $(isbn).remove();
+                    $("#"+isbn).remove();
                     //수정처리
                     //title
                     var title = $(this).parent().parent().find("#title" + isbn).text();
@@ -213,12 +207,12 @@ function test(key) {
                     $(this).parent().parent().find("td:nth-child(4)").append(updatePriceBox);
 
                     $(this).parent().parent().find($("#update")).attr("value", "완료");
-                    var btn = $(this).parent().parent().find($("#update"));
-                    btn.on("click", function () {
+                    $("#update").on("click", function () {
                         var title = updateTitleBox.val();
                         var author = updateAuthorBox.val();
                         var price = updatePriceBox.val();
                         var tr = $(this).parent().parent();
+                        updateTitleBox.remove();
                         $.ajax({
                             url: "http://localhost:7070/book/bookUpdate",
                             type: "GET",
@@ -231,13 +225,13 @@ function test(key) {
                                 price: price
                             },
                             success: function (result) {
-                                alert("정상입니다");
-                                tr.find("#title" + isbn).empty();
-                                tr.find("#title" + isbn).text(title);
+                                tr.find("td:nth-child(2)").empty();
+                                tr.find("td:nth-child(2)").text(title);
                                 tr.find("td:nth-child(3)").empty();
                                 tr.find("td:nth-child(3)").text(author);
                                 tr.find("td:nth-child(4)").empty();
                                 tr.find("td:nth-child(4)").text(price);
+                                $("#update").attr("value", "수정");
                             },
                             error: function () {
                                 alert("업데이트 에러 발생!!")

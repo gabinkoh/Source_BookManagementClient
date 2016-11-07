@@ -15,8 +15,7 @@ body {
   background-color: transparent;
 }
 .jumbotron .btn {
-  padding: 14px 24px;
-  font-size: 21px;
+  font-size: 11px;
 }
 
 /* Customize the nav-justified links to be fill the entire space of the .navbar */
@@ -85,4 +84,9 @@ body {
     padding-right: 0;
     padding-left: 0;
   }
+}
+
+#loginForm {
+  margin: auto;
+  margin-bottom: 400px;
 }

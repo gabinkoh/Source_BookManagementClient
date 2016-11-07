@@ -1,27 +1,33 @@
 /**
  * Created by CJuser on 2016-10-31.
  */
-$(function(){
 
+function sessionCheck() {
     $.ajax({
         url : "http://localhost:7070/book/userSession",
         type: "GET",
         dataType : "jsonp",
         jsonp : "callback",
         success : function(result){
-            if (result.id != null) {//
+            if (result != null) {//login된 상황
                 $("#loginout").text("logout");
-                $("#loginout").attr("href","signIn.html");
+                $("#loginout").attr("onclick","logout()");
+                // $(location).attr("href", "select.html");
             } else {
-                $("#loginout").text("login");
-                $("#loginout").attr("href","toSignIn.html");
+
+                console.log(result);
+                // $("#loginout").text("login");
+                location.replace("toSignIn.html");
             }
         },
         error: function () {
             alert("session check 이상")
         }
     });
+}
+$(function(){
 
+    sessionCheck();
 
     $("#signUpBtn").on("click", function () {
         alert("signUpBtn click");
@@ -41,11 +47,9 @@ $(function(){
             },
             success : function(result){
                 if (result == "logout") {
-                    alert("logout");
                 } else {
                     alert("sign in 성공" + result);
-                    $("#userCheck").load("signIn.html");
-                    $("#userId").innerHTML = result.id;
+                    $(location).attr("href", "index.html");
                 }
             },
             error: function () {
@@ -70,7 +74,7 @@ alert("signUp() ..");
         },
         success : function(result){
 
-            $("#userCheck").load("toSignIn.html");
+            $(location).attr("href","toSignIn.html");
             alert("sign up 성공")
 
         },
@@ -81,6 +85,7 @@ alert("signUp() ..");
 }
 
 function logout() {
+    console.log("logout ");
     $.ajax({
         url : "http://localhost:7070/book/userConfirm",
         type: "GET",
@@ -88,7 +93,7 @@ function logout() {
         jsonp : "callback",
         success : function(result){
             // $(location).load("index.html");
-            location.reload();
+            $(location).attr("href", "index.html");
             // alert("logout " + result.session);
         },
         error: function () {
@@ -97,5 +102,4 @@ function logout() {
 
     });
 
-    console.log("2 ");
 }
