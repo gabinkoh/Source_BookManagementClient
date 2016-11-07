@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Book Management System </title>
+
+    <!-- jQuery CDN을 먼저 포함 -->
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CDN 포함 -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+          crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <link href="css/justified-nav.css" rel="stylesheet">
+    <script src="js/index.js"></script>
+
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- The justified navigation menu is meant for single line per list item.
+         Multiple lines will require custom code not provided by Bootstrap. -->
+    <div class="masthead">
+        <h3 class="text-muted">Book Management Sytem</h3>
+        <a id="loginout"></a>
+        <nav>
+            <ul class="nav nav-justified">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="select.html">Book Management</a></li>
+                <li><a href="commentListForOne.html">Review</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+
+    <!-- Jumbotron -->
+<div class="jumbotron">
+    <div id="userCheck">
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus
+            commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+        <p><a class="btn btn-lg btn-success" id="logout" role="button" onclick="logout()">Logout</a></p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>도서검색 리스트</title>
+
+    <!-- jQuery CDN을 먼저 포함 -->
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CDN 포함 -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+          crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <link href="css/justified-nav.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
+    <script src="js/commentListForOne.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="masthead">
+        <h3 class="text-muted">Book Management System</h3>
+        <nav>
+            <ul class="nav nav-justified">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="select.html">Book Search</a></li>
+                <li class="active"><a href="commentListForOne.html">Review</a></li>
+            </ul>
+
+            <span class="navbar-form navbar-right">
+                <select id="keywordSelect" class="form-control">
+                    <option value="cauthor" selected="selected">작성자</option>
+                    <option value="btitle">도서명</option>
+                </select>
+                <input type="text" class="form-control" placeholder="Search..." id="keyword" onkeyup="searchComment()">
+            </span>
+        </nav>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 ">
+                <ul class="nav nav-sidebar">
+                    <li class="active"><a href="commentListForOne.html">서평 조회 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="selectForComment.html">서평 등록</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <h2 class="sub-header">서평 리스트</h2>
+                <p id="list-description"></p>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>책</th>
+                            <th>서평 제목</th>
+                            <th>글쓴이</th>
+                            <th>날짜</th>
+                            <th>내용</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

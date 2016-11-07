@@ -27,47 +27,40 @@
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
 
-    <link href="../jQueryLastTest/css/dashboard.css" rel="stylesheet">
+    <link href="css/justified-nav.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
     <script src="js/select.js"></script>
-
 
 </head>
 
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">도서 관리 시스템</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Help</a></li>
+<div class="container">
+    <div class="masthead">
+        <h3 class="text-muted">Book Management System</h3>
+        <nav>
+            <ul class="nav nav-justified">
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="select.html">Book Search</a></li>
+                <li><a href="insertComment.html">Review</a></li>
             </ul>
             <span class="navbar-form navbar-right">
                 <input type="text" class="form-control" placeholder="Search..." id="keyword" onkeyup="searchBook()">
             </span>
-        </div>
+        </nav>
     </div>
-</nav>
+
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
+        <div class="col-sm-3 col-md-2 ">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="#">도서검색 <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="select.html">도서 검색 <span class="sr-only">(current)</span></a></li>
+                <li><a href="insert.html">도서 입력</a></li>
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h2 class="sub-header">도서 리스트</h2>
+            <h2 class="sub-header">나의 대여 목록</h2>
+            <p id="list-description"></p>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -75,9 +68,9 @@
                         <th>이미지</th>
                         <th>제목</th>
                         <th>저자</th>
-                        <th>가격</th>
-                        <th>삭제</th>
-                        <th>수정</th>
+                        <th>대여일</th>
+                        <th>반납일</th>
+                        <th>반납</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -87,7 +80,7 @@
         </div>
     </div>
 </div>
-
+</div>
 
 </body>
 </html>

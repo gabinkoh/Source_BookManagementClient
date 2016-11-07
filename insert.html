@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>도서검색 리스트</title>
+
+    <!-- jQuery CDN을 먼저 포함 -->
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CDN 포함 -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+          crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <link href="css/justified-nav.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
+    <script src="js/insert.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="masthead">
+        <h3 class="text-muted">Book Management System</h3>
+        <nav>
+            <ul class="nav nav-justified">
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="select.html">Book Management</a></li>
+                <li><a href="#">Lending</a></li>
+                <li><a href="#">Review</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 ">
+                <ul class="nav nav-sidebar">
+                    <li><a href="#">도서 검색</a></li>
+                    <li class="active"><a href="#">도서 입력 <span class="sr-only">(current)</span></a></li>
+                </ul>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <h2 class="sub-header">도서 입력</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>이미지</th>
+                            <th>isbn</th>
+                            <th>제목</th>
+                            <th>출판일</th>
+                            <th>페이지</th>
+                            <th>가격</th>
+                            <th>저자</th>
+                            <th>번역자</th>
+                            <th>출판사</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <form id="nsertImg" action="/fileupload" method="post">
+                                    <input type="file" name="uploadfile" />
+                                </form>
+                            </td>
+                            <td><input type="text" id="insertIsbn"></td>
+                            <td><input type="text" id="insertTitle"></td>
+                            <td><input type="text" id="insertDate"></td>
+                            <td><input type="text" id="insertPage"></td>
+                            <td><input type="text" id="insertPrice"></td>
+                            <td><input type="text" id="insertAuthor"></td>
+                            <td><input type="text" id="insertTranslator"></td>
+                            <td><input type="text" id="insertPublisher"></td>
+                            <td><input type="button" value="입력" onclick="insertBook()"/></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

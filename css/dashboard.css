@@ -104,3 +104,9 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+/*1102추가*/
+.detailDiv {
+  font-size: 9pt;
+  color: #424242;
+}

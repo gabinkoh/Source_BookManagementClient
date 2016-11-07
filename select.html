@@ -36,13 +36,12 @@
 <body>
 <div class="container">
     <div class="masthead">
-        <h3 class="text-muted">Book Management Sytem</h3>
+        <h3 class="text-muted">Book Management System</h3>
         <nav>
             <ul class="nav nav-justified">
-                <li><a href="#">Home</a></li>
-                <li class="active"><a href="#">Book Search</a></li>
-                <li><a href="#">Book Add</a></li>
-                <li><a href="#">Review</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="select.html">Book Search</a></li>
+                <li><a href="insertComment.html">Review</a></li>
             </ul>
             <span class="navbar-form navbar-right">
                 <input type="text" class="form-control" placeholder="Search..." id="keyword" onkeyup="searchBook()">
@@ -53,9 +52,15 @@
 
 <div class="container-fluid">
     <div class="row">
-
+        <div class="col-sm-3 col-md-2 ">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="select.html">도서 검색 <span class="sr-only">(current)</span></a></li>
+                <li><a href="insert.html">도서 입력</a></li>
+            </ul>
+        </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h2 class="sub-header">도서 리스트</h2>
+            <p id="list-description"></p>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -67,6 +72,7 @@
                         <th>삭제</th>
                         <th>수정</th>
                         <th>대여</th>
+                        <th>리뷰</th>
                     </tr>
                     </thead>
                     <tbody>
